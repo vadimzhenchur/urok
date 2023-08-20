@@ -1,0 +1,142 @@
+from PyQt5.QtWidgets import *
+
+app = QApplication([])
+
+window = QWidget()
+window.resize(100 , 100)
+
+quest = QLabel("                                                                   В якому році помер Андрій Кузьменко?")
+quest1 = QLabel("                                                                                 Та?")
+quest2 = QLabel("                                                                  В якому році почалась війна в донбасі?")
+quest3 = QLabel("                                                                  Чому дорівнює квадрат гіпотенузи?")
+
+ans1 = QRadioButton("2005")
+ans2 = QRadioButton("2010")
+ans3 = QRadioButton("2015")
+ans4 = QRadioButton("2020")
+
+dfg1 = QRadioButton("mama")
+dfg2 = QRadioButton("tato")
+dfg3 = QRadioButton("سلام")
+dfg4 = QRadioButton("Автор сам не знає")
+
+qwe1 = QRadioButton("2014")
+qwe2 = QRadioButton("2013")
+qwe3 = QRadioButton("2022")
+qwe4 = QRadioButton("немає правильної відповіді")
+
+asd1 = QRadioButton("дорівнює площі квадрата зі стороною, яка дорівнює цьому числу")
+asd2 = QRadioButton("дорівнює сумі площ квадратів, побудованих на катетах")
+asd3 = QRadioButton("Добуток трьох рівних чисел а*а*а")
+asd4 = QRadioButton("число помножене саме на себе")
+
+mainLine = QVBoxLayout()
+mainLine.addWidget(quest)
+
+
+h1 = QHBoxLayout()
+h1.addWidget(ans1)
+h1.addWidget(ans2)
+mainLine.addLayout(h1)
+h2 = QHBoxLayout()
+h2.addWidget(ans3)
+h2.addWidget(ans4)
+mainLine.addLayout(h2)
+
+mainLine.addWidget(quest1)
+l1 = QHBoxLayout()
+l1.addWidget(dfg1)
+l1.addWidget(dfg2)
+mainLine.addLayout(l1)
+l2 = QHBoxLayout()
+l2.addWidget(dfg3)
+l2.addWidget(dfg4)
+mainLine.addLayout(l2)
+
+mainLine.addWidget(quest2)
+p1 = QHBoxLayout()
+p1.addWidget(qwe1)
+p1.addWidget(qwe2)
+mainLine.addLayout(p1)
+p2 = QHBoxLayout()
+p2.addWidget(qwe3)
+p2.addWidget(qwe4)
+mainLine.addLayout(p2)
+mainLine.addWidget(quest1)
+mainLine.addWidget(quest2)
+
+mainLine.addWidget(quest3)
+z1 = QHBoxLayout()
+z1.addWidget(asd1)
+z1.addWidget(asd2)
+mainLine.addLayout(z1)
+z2 = QHBoxLayout()
+z2.addWidget(asd3)
+z2.addWidget(asd4)
+mainLine.addLayout(z2)
+mainLine.addWidget(quest1)
+mainLine.addWidget(quest2)
+mainLine.addWidget(quest3)
+def a():
+    b = QMessageBox()
+    b.setText('Вірно!\n Порошенко вбив Андрійчика')
+    b.exec_()
+def q():
+    s = QMessageBox()
+    s.setText('НЕПРАВИЛЬНО!\n Введи правильну відповідь')
+    s.exec_()
+
+
+def t():
+    k = QMessageBox()
+    k.setText('Вірно!\n نا أيضاً أذهب إلى المدرسة')
+    k.exec_()
+
+def j():
+    m = QMessageBox()
+    m.setText('Вірно!\n вже пройшло 9 років')
+    m.exec_()
+def n():
+    ww = QMessageBox()
+    ww.setText('НЕПРАВИЛЬНО!\n Введи правильну відповідь')
+    ww.exec_()
+def p():
+    j = QMessageBox()
+    j.setText('НЕПРАВИЛЬНО!\n adolf Gitler')
+    j.exec_()
+
+def x():
+    c = QMessageBox()
+    c.setText('Вірно!\n Ти напевно в школі файно вчився(ла) ')
+    c.exec_()
+def v():
+    vv = QMessageBox()
+    vv.setText('НЕПРАВИЛЬНО!\n Введи правильну відповідь')
+    vv.exec_()
+
+
+ans3.clicked.connect(a)
+ans1.clicked.connect(q)
+ans2.clicked.connect(q)
+ans4.clicked.connect(q)
+
+dfg3.clicked.connect(t)
+dfg1.clicked.connect(p)
+dfg2.clicked.connect(p)
+dfg4.clicked.connect(p)
+
+
+qwe1.clicked.connect(j)
+qwe2.clicked.connect(n)
+qwe3.clicked.connect(n)
+qwe4.clicked.connect(n)
+
+asd1.clicked.connect(v)
+asd2.clicked.connect(x)
+asd3.clicked.connect(v)
+asd4.clicked.connect(v)
+
+window.setLayout((mainLine))
+window.show()
+
+app.exec()
